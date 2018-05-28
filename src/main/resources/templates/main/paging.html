@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body> 
+		<div th:if="${Page.getTotalPages() != 1}" class="form-group col-md-11 pagination-centered">
+				<ul class="pagination">
+								<li th:class="${Page.getNumber() == 0} ? disabled">
+								<a class="pageLink" th:href="@{''} + ${1}">&laquo;</a></li>
+								
+								<li th:class="${Page.getNumber() == 0} ? disabled">
+								<a class="pageLink" th:href="@{''}+${Page.getNumber()}">&larr;</a></li>
+								<li
+									th:class="${Page.getNumber() == (page - 1)} ? 'active pointer-disabled'"
+									th:each="page : ${#numbers.sequence(beginIndex, endIndex)}">
+									<a class="pageLink" th:href="@{''}+${page}" th:text="${page}"></a></li>
+								<li
+									th:class="${Page.getNumber() + 1 == Page.getTotalPages()} ? disabled">
+									<a class="pageLink" th:href="@{''}+${Page.getNumber() + 2}">&rarr;</a></li>
+								<li
+									th:class="${Page.getNumber() + 1 == Page.getTotalPages()} ? disabled">
+									<a class="pageLink" th:href="@{''}+${Page.getTotalPages()}">&raquo;</a></li>
+							</ul>
+		</div>
+</body>
+</html>

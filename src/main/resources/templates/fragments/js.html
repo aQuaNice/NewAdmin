@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head></head>
+    <body>
+    <div class="pace-activity"></div>
+    
+					<div class="navbar navbar-default navbar-fixed-bottom">
+						<div class="container" type="align:center;">
+							<p class="navbar-text navbar-right">© Nicepay Indonesia-2016</p>
+						</div>
+					</div>
+        <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+        <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+        <script src="../static/js/app.js" th:src="@{/js/app.js}"></script>
+          <script src="../static/js/pace.js" th:src="@{/js/pace.js}"></script>
+<!-- <<<<<<< HEAD -->
+          <script src="../static/css/40aab700698a291c5ce712a44ec8bc34.js" th:src="@{/css/40aab700698a291c5ce712a44ec8bc34.js}"></script>
+          <script src="../static/js/bootstrap-combobox.js" th:src="@{/js/bootstrap-combobox.js}"></script>
+          <script src="../static/js/password.js" th:src="@{/js/password.js}"></script>
+          <script src="../static/js/passwordBar.js" th:src="@{/js/passwordBar.js}"></script>
+
+<!-- ======= -->
+           <script src="../static/js/pace.js" th:src="@{/js/datepicker.js}"></script>
+<!-- >>>>>>> c8b3b2872079c94ead690588acaec3001ff2432a -->
+          
+          <script>
+          window.onbeforeunload = renderLoading;
+          function renderLoading() {
+              Pace.stop();
+              //Pace.start();
+              Pace.bar.render();
+          }
+
+          $('.datepic').datepicker({
+              autoclose: true,
+//               format: 'yyyy-mm-dd',
+          });
+          </script>
+          
+       
+        
+    </body>
+    
+</html>

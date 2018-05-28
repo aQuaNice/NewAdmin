@@ -1,0 +1,49 @@
+@media print {
+    #printable { page-break-inside: auto; }
+
+    .page {
+        page-break-after: always;
+        page-break-inside: avoid;
+    }
+    
+    .page2 {
+        page-break-before: always;
+        page-break-inside: avoid;
+    }
+
+}
+
+page[size="A4"] {
+  background: white;
+  width: 21cm;
+  height: 29.7cm;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+@media print {
+.mprint,.ModalPrint,html,body,page[size="A4"] {
+	height: 100%;
+    margin: 0;
+    box-shadow: 0;
+    padding: 0;
+    page_break_before :auto;
+      page-break-after: auto;
+        page-break-inside: auto;
+     
+    } 
+   .mprint { page-break-inside: auto; }
+}
+
+.ModalPrint{
+	padding-top:1%;
+	max-height: 100%;
+	overflow: auto;
+	width:55%; 
+	background:#e5e5e5;
+	border: 1px inset;
+	margin: auto;
+	position: relative
+}

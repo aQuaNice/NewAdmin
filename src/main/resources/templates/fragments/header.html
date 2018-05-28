@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">NICEPAY</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-left">
+					<li th:class="${activePage == 'home'}? 'active' : ''"><a
+						href="#" th:href="@{/}">Home</a></li>
+					<li th:class="${activePage} == 'insident'? 'active' : ''"><a
+						href="#" th:href="@{/insident}">Insident</a></li>
+					<li th:class="${activePage} == 'subscriber'? 'active' : ''" sec:authorize="hasRole('ROLE_ADMIN')"><a
+						href="#" th:href="@{/subscriber}" sec:authorize="hasRole('ROLE_ADMIN')">Subscriber</a></li>
+					<li th:class="${activePage} == 'check'? 'active' : ''" sec:authorize="hasRole('ROLE_ADMIN')"><a
+						href="#" th:href="@{/check}" >Check</a></li>
+					<li th:class="${activePage} == 'service'? 'active' : ''" sec:authorize="hasRole('ROLE_ADMIN')"><a
+						href="#" th:href="@{/service}">Service</a></li>	
+					<li th:class="${activePage} == 'host'? 'active' : ''" sec:authorize="hasRole('ROLE_ADMIN')"><a
+						href="#" th:href="@{/host}">Host</a></li>
+					
+						<li th:class="${activePage} == 'cloud'? 'active' : ''" sec:authorize="hasRole('ROLE_ADMIN')"><a
+						href="#" th:href="@{/cloud}">Push User</a></li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				<li th:class="${activePage} == 'user'? 'active' : ''"><a
+						href="#" th:href="@{/useradmin}" sec:authorize="hasRole('ROLE_ADMIN')">User Admin</a></li>
+					<li th:class="${activePage} == 'profile'? 'active' : ''"><a
+						href="#" th:href="@{/profile}">Profile</a></li>
+					<li th:class="${activePage} == 'contacts'? 'active' : ''"><a
+						href="logout" th:href="@{/logout}">Log Out</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+
+
+<!-- th:if="!${#lists.isEmpty(errMsg)}" -->
+<!-- <h3 sec:authorize="hasRole('ROLE_USER')"   class="help-block" th:text="${role}"></h3> -->
+<!-- model.addAttribute("user", getPrincipal()); -->
+
+<!-- <div th:if="${role == 'ROLE_ADMIN'}"> -->
+<!--         This will only be displayed if authenticated user has role ROLE_ADMIN. -->
+<!-- </div> -->
+
+<!-- <div th:if="${role == 'RROLE_USER'}"> -->
+<!--         This will only be displayed if authenticated user has role ROLE_USER. -->
+<!-- </div> -->
+
+	
+</body>
+</html>
+

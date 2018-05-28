@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+				<ul class="nav navbar-right panel_toolbox">
+<!--                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li> -->
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a  onclick="appmain.GetPrint()">Print &nbsp;<i class="fa fa-print"></i></a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+
+<!-- <a class="btn btn-success pull-right"  onclick="appmain.CrudView(this)"><i class="fa fa-plus"></i>&nbsp;Add New!</a> -->
+	<table id="datatable"
+		class="table table-striped table-bordered dataTable no-footer"
+		role="grid" aria-describedby="datatable_info">
+		<thead>
+			<tr role="row">
+				<th class="sorting_asc" tabindex="0" aria-controls="datatable"
+					rowspan="1" colspan="1" aria-sort="ascending"
+					aria-label="Name: activate to sort column descending"
+					style="width: 265px;">Main Item</th>
+					
+				<th class="sorting" tabindex="0" aria-controls="datatable"
+					rowspan="1" colspan="1"
+					aria-label="Position: activate to sort column ascending"
+					style="width: 25px;">Jumlah Item</th>
+				<th class="sorting" tabindex="0" aria-controls="datatable"
+					rowspan="1" colspan="1"
+					aria-label="Office: activate to sort column ascending"
+					style="width: 35px;">Item / psc</th>
+				<th class="sorting" tabindex="0" aria-controls="datatable"
+					rowspan="1" colspan="1"
+					aria-label="Age: activate to sort column ascending"
+					style="width: 25px;">Item vol</th>
+							<th class="sorting" tabindex="0" aria-controls="datatable"
+					rowspan="1" colspan="1"
+					aria-label="Start date: activate to sort column ascending"
+					style="width: 199px;">Price / pcs</th>
+				<th class="sorting" tabindex="0" aria-controls="datatable"
+					rowspan="1" colspan="1"
+					aria-label="Start date: activate to sort column ascending"
+					style="width: 199px;">Total Price</th>
+<!-- 				<th class="sorting" tabindex="0" aria-controls="datatable" -->
+<!-- 					rowspan="1" colspan="1" -->
+<!-- 					aria-label="Salary: activate to sort column ascending" -->
+<!-- 					style="width: 100px;">Action</th> -->
+			</tr>
+		</thead>
+		<tbody>
+		
+
+
+			<div th:if="!${#lists.isEmpty(Page)}">
+				<tr th:each="list : ${Page}">
+					<td th:text="${list.deschead}"></td>
+					<td th:text="${list.jumlah}"></td>
+					<td th:text="${list.vol}"></td>
+					<td th:text="${list.satuan}"></td>
+					<td th:text="${#numbers.formatDecimal(list.itemsell, 0, 'COMMA', 2, 'POINT')}"></td>
+					
+					<td th:text="${#numbers.formatDecimal(list.itemsell * list.jumlah, 0, 'COMMA', 2, 'POINT')}"></td>
+<!-- 					<td style="text-align: center"> -->
+<!-- 						<div class="btn-group" role="group" aria-label="..."> -->
+<!-- 							<a th:attr="data-url='view-order/'+${list.id}" onclick="appmain.CrudView(this)" -->
+<!-- 								class="btn btn-success"><span -->
+<!-- 								class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>  -->
+<!-- 						</div> -->
+<!-- 					</td> -->
+				</tr>
+
+			</div>
+			<div th:if="${#lists.isEmpty(Page)}">
+				<tr>
+					<td>No data exists!</td>
+				</tr>
+			</div>
+		</tbody>
+	</table>
+</body>
+</html>

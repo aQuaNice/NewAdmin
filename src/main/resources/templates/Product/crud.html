@@ -1,0 +1,129 @@
+<div class="container" style="margin-top: 10%" id="crudcontainer">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<!--<div class="container">-->
+			<form th:object="${product}" method="POST"
+				enctype="multipart/form-data" id="fileUploadForm" action="add-product" data-form="direct">
+				<!-- 			   <form action="/add-product" th:action="@{/add-product}" th:object="${product}" method="post" enctype="multipart/form-data"> -->
+				<div class="panel panel-primary">
+
+					<!-- Default panel contents -->
+					<div class="panel-heading">Add Product</div>
+					<div class="panel-body">
+
+						<!-- 						<div class="container"> -->
+
+						<fieldset>
+							<legend>Basic Information</legend>
+
+							<div class="form-group">
+								<div class="col-sm-6">
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1"><i
+											class="fa fa-shopping-bag"></i></span> <input required="true"
+											type="text" class="form-control" placeholder="Item Name"
+											th:field="*{deschead}" name="deschead"
+											aria-describedby="basic-addon1" />
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<span class="input-group-addon">Rp.</span> <input
+											required="true" type="text" class="form-control"
+											placeholder="Price" th:field="*{itmprice}" name="itmprice"
+											aria-label="Amount (to the nearest dollar)" /> <span
+											class="input-group-addon">.00</span>
+									</div>
+								</div>
+							</div>
+
+
+							<!-- 						          	modelAndView.addObject("Pcs", lcpcs); -->
+							<!-- 		modelAndView.addObject("Vol", lcvol); -->
+							<!-- 		modelAndView.addObject("kat", lckat);  			 -->
+							<div class="form-group">
+								<div class="col-sm-6">
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon3"><i
+											class="fa fa-cogs" th:text="${list}"></i></span> <select
+											th:field="*{idmenu}" id="idmenu" name="idmenu"
+											class="form-control selectpicker" data-live-search="true"
+											aria-describedby="basic-addon3">
+											<option th:each="list : ${Kat}" th:value="${{list.id}}"
+												th:text="${list.desc}">Wireframe</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="input-group">
+										<span class="input-group-addon"><i
+											class="fa fa-picture-o"></i></span> <input required="true"
+											type="file" class="form-control" placeholder="Item Image"
+											name="files" aria-describedby="basic-addon1" />
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+
+
+						<fieldset>
+							<legend>Spesific detail</legend>
+							<div class="form-group">
+								<div class="col-sm-4">
+									<label for="inputitmsat">Item Satuan</label> <select
+										th:field="*{itmsat}" id="itmsat" name="itmsat"
+										class="form-control selectpicker" data-live-search="true"
+										aria-describedby="basic-addon3">
+										<option th:each="list : ${Pcs}" th:value="${{list.descpcs}}"
+											th:text="${list.descpcs}">Wireframe</option>
+									</select>
+								</div>
+								<div class="col-sm-4">
+									<label for="inputitmqty">Item Qty</label> <select
+										th:field="*{itmqty}" id="itmqty" name="itmqty"
+										class="form-control selectpicker" data-live-search="true"
+										aria-describedby="basic-addon3">
+										<option th:each="list : ${Qty}" th:value="${{list.descqty}}"
+											th:text="${list.descqty}">Wireframe</option>
+									</select>
+								</div>
+								<div class="col-sm-4">
+									<label for="inputitmvol">Item Vol</label> <select
+										th:field="*{itmvol}" id="itmvol" name="itmvol"
+										class="form-control selectpicker" data-live-search="true"
+										aria-describedby="basic-addon3">
+										<option th:each="list : ${Vol}" th:value="${{list.descvol}}"
+											th:text="${list.descvol}">Wireframe</option>
+									</select>
+									<!-- 						                    <input type="text" class="form-control" id="inputitmvol" placeholder="Volume" th:field="*{itmvol}" name="itmvol" /> -->
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label for="user_email">Describe</label>
+									<textarea class="form-control" rows="5" id="desccont"
+										name="desccont" cols=""></textarea>
+									<!-- 						                    <input class="form-control required email" id="user_email" name="user[email]" required="true" size="30" type="text" /> -->
+								</div>
+							</div>
+						</fieldset>
+
+					</div>
+					<div class="panel-footer">
+						<div class="text-right">
+							<a onclick="appmain.ClosePage(this)" data-page="ModalCrud"
+								class="btn btn-default">Cancel</a>
+							<button type="submit" class="btn btn-primary">Save</button>
+						</div>
+					</div>
+					<!--.panel-footer-->
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--/*/ <th:block th:include="main/head :: head"></th:block> /*/-->
+</head>
+<body class="nav-md" >
+	<div class="container body">
+	<div class="main_container" ng-app="AdminApp">
+			<!--/*/ <th:block th:include="main/side :: body"></th:block> /*/-->
+			<!--/*/ <th:block th:include="main/topnav :: body"></th:block> /*/-->
+			
+			<div id="editor"></div>
+<div class="crudmain" id="ModalCrud" >
+<!-- <div class='ModalPrint'> -->
+
+<!-- <div class="mprint"> -->
+<!-- 	<page size='A4'>a</page> -->
+<!-- 	<page size='A4'>b</page> -->
+<!-- 	<page size='A4'>c</page> -->
+
+<!-- </div> -->
+
+<!-- <div class="btnprint" style="position: fixed; height: 3em; width: 55%; bottom: 0; background: black"> -->
+<!-- <div class="sidebar-footer hidden-small " style=" height: 3.5em; border-radius: 10px 0px 0px 10px ; right:22.5%; bottom: 0.5%"> -->
+<!-- 				<a data-toggle="tooltip" data-placement="top" title="" data-original-title="Print" onclick="appmain.GoPrint()"> -->
+<!-- 					<span class="glyphicon glyphicon-print" aria-hidden="true"></span> -->
+<!-- 				</a> <a data-toggle="tooltip" data-placement="top" title="" data-original-title="FullScreen"> -->
+<!-- 					<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> -->
+<!-- 				</a> <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Lock">  -->
+<!-- 				<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> -->
+<!-- 				</a> <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Close">  -->
+<!-- 				<span class="glyphicon glyphicon-off" aria-hidden="true"></span> -->
+<!-- 				</a> -->
+<!-- 			</div> -->
+<!-- </div> -->
+<!-- </div> -->
+
+
+
+</div>
+<div class="crudmain" id="message">
+	<div class="mainnotif"></div>
+</div>
+			<!--/*/ <th:block th:include="${activePage} :: body"></th:block> /*/-->
+		
+			<!--/*/ <th:block th:include="main/footer :: body"></th:block> /*/-->
+	</div>
+	
+	</div>	
+	<!--/*/ <th:block th:include="main/js :: body"></th:block> /*/-->
+  
+ 
+</body>
+</html>
